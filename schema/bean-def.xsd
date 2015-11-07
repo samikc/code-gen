@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xsd:element name="beans">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="bean"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="bean">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="fields"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" use="required" type="xsd:string"/>
+      <xsd:attribute name="package" use="required" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="fields">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="field"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="field">
+    <xsd:complexType>
+      <xsd:attribute name="name" use="required" type="xsd:string"/>
+      <xsd:attribute name="type" use="required" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

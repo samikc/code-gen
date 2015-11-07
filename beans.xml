@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <bean name="Employee" package="com.example.bean">
+        <fields>
+            <field name="firstName" type="String"></field>
+            <field name="lastName" type="String"></field>
+            <field name="id" type="String"></field>
+        </fields>
+    </bean>
+</beans>

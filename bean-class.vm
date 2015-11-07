@@ -1,0 +1,31 @@
+public class $className {
+
+#foreach( $field in $fields )
+    private $field.getType() $field.getName();
+#end
+
+#foreach( $field in $fields)
+    #if( $field.getType().equals("boolean") )
+    public boolean is$field.getName().substring(0, 1).toUpperCase()$field.getName().substring(1)(){
+        return this.$field.getName();
+    }
+    #elseif( $field.getType().equals("Boolean") )
+    public boolean is$field.getName().substring(0, 1).toUpperCase()$field.getName().substring(1)() {
+        return this.$field.getName();
+    }
+    #else
+    public $field.getType() get$field.getName().substring(0, 1).toUpperCase()$field.getName().substring(1)() {
+        return this.$field.getName();
+    }
+    #end
+
+#end
+
+#foreach( $field in $fields)
+    public  void set$field.getName().substring(0, 1).toUpperCase()$field.getName().substring(1)($field.getType() arg1) {
+        this.$field.getName() = arg1;
+    }
+
+#end
+
+}
